@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:49:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/01 14:07:20 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/01 16:11:17 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_flags(t_datas *datas)
 		if (STR() == '-')
 			datas->left_aligned = 1;		
 		datas->cursor++;
+		datas->chainelen--;
 	}
 	
 }
@@ -38,8 +39,11 @@ void	ft_parse(t_datas *datas)
 {
 	
 	datas->cursor++;
+// RESET DES PARAMS VARIABLES DE LA STRUCT //
 	ft_initializer(datas);
+// DETERMINATION DES FLAGS //
 	ft_flags(datas);
+// STRINGS //
 	if (STR() == 's' || STR() == 'c')
 		ft_string(datas);
 /*	if (datas->chaine[datas->cursor] == 'd')
@@ -53,6 +57,8 @@ int	ft_printf(const char *chaine, ...)
 
 	datas.cursor = 0;
 	datas.chaine = (char *)chaine;
+	datas.chainelen = ft_strlen(datas.chaine);
+
 // ECRITURE DE LA CHAINE //
 	while (chaine[datas.cursor])
 	{
@@ -65,14 +71,5 @@ int	ft_printf(const char *chaine, ...)
 		datas.cursor++;
 	}
 	va_end(datas.ap);
-	return (1);
+	return (datas.chainelen);
 }
-/*
-int main(int argc, char **argv)
-{
-	
-	(void)argc;
-	ft_printf("// MON PRINTF // ceci est la chaine : %0s %s \n", argv[1], argv[2]);
-	printf("// LE PRINTF //  ceci est la chaine : %*s %s \n", 10, argv[1], argv[2]);
-	return 1;
-}*/

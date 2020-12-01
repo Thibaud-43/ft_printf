@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_string.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/01 09:24:32 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/01 16:14:41 by trouchon         ###   ########.fr       */
+/*   Created: 2020/11/11 12:51:35 by trouchon          #+#    #+#             */
+/*   Updated: 2020/11/13 10:39:54 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-void	ft_string(t_datas *datas)
+int		ft_strlen(char *str)
 {
 	int i;
 
 	i = 0;
-	datas->str = va_arg(datas->ap, char *);
-	while (datas->str[i])
+	while (str[i])
 		i++;
-	if (datas->left_aligned == 1)
-		write(1, datas->str, i);
-	while (datas -> width && datas->width-- > i)
-		write(1, " ", 1);
-	if (datas->left_aligned == 0)
-		write(1, datas->str, i);
-	datas->chainelen += i;
+	return (i);
 }
