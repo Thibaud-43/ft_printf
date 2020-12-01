@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:24:32 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/01 16:24:30 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/01 16:27:56 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_string(t_datas *datas)
 	while (datas -> width && datas->width-- > i)
 	{
 		write(1, " ", 1);
-		k = 0;
+		k++;
 	}
 	if (datas->left_aligned == 0)
 		write(1, datas->str, i);
