@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 17:35:45 by trouchon          #+#    #+#             */
-/*   Updated: 2020/11/18 11:29:43 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/01 12:48:46 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
+# define STR() datas->chaine[datas->cursor]
 
 typedef struct	s_list
 {
@@ -22,6 +24,19 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+typedef struct  s_datas
+{
+	va_list	ap;
+	int		cursor;
+	char	*chaine;
+	char	*str;
+	int		decimal;
+	int		width;
+	int		left_aligned;
+
+}				t_datas;
+
+void			ft_string(t_datas *datas);
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
