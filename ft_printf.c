@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:49:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/01 16:11:17 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/01 16:21:21 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	ft_parse(t_datas *datas)
 {
 	
 	datas->cursor++;
+	datas->chainelen--;
 // RESET DES PARAMS VARIABLES DE LA STRUCT //
 	ft_initializer(datas);
 // DETERMINATION DES FLAGS //
