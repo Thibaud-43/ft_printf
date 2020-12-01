@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 17:35:45 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/01 12:48:46 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/01 14:27:50 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+#include <assert.h>
+#include <stdarg.h>
 # define STR() datas->chaine[datas->cursor]
 
 typedef struct	s_list
