@@ -6,11 +6,11 @@
 #    By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/20 17:04:20 by trouchon          #+#    #+#              #
-#    Updated: 2020/12/01 14:14:22 by trouchon         ###   ########.fr        #
+#    Updated: 2020/12/01 16:18:38 by trouchon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			=	ft_isdigit.c ft_printf.c ft_string.c
+SRCS			=	ft_isdigit.c ft_printf.c ft_string.c ft_strlen.c
 OBJS			= $(SRCS:.c=.o)
 BONUS_OBJS		= $(BONUS:.c=.o)
 CC				= clang
