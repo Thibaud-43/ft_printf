@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:24:32 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/02 11:02:20 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/02 11:05:30 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		ft_string_null(t_datas *datas)
 		write(1, "(null)", i);
 	while (k < (datas->width - i))
 	{
-		if (datas->zeros_activated == 1)
+		if (datas->zero_activated == 1)
 			write (1, "0", 1);
 		else
 			write(1, " ", 1);
@@ -76,7 +76,7 @@ void	ft_string(t_datas *datas)
 		write(1, datas->str, i);
 	while (k < (datas->width - i))
 	{
-		if (datas->zeros_activated == 1)
+		if (datas->zero_activated == 1)
 			write(1, "0", 1);
 		else
 			write(1, " ", 1);
