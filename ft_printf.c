@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:49:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/02 14:18:19 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/02 15:30:22 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,27 @@
 
 static void		ft_initializer(t_datas *datas)
 {
-	datas->decimal = 0;
 	datas->width = 0;
 	datas->left_aligned = 0;
-	datas->precision = 2000000;
+	datas->precision = 0;
+	datas->precision_len = 0;
 	datas->zero_activated = 0;
 }
 
-static void		ft_parser(t_datas *datas)
+static int		ft_parser(t_datas *datas)
 {
 	NEXT();
 	datas->chainelen--;
 	ft_initializer(datas);
 	ft_flags(datas);
 	if (STR() == 's' || STR() == 'c')
-	{
-		datas->str = va_arg(datas->ap, char *);
 		ft_string(datas);
-	}
 	if (STR() == 'd')
 	{
-		datas->str = ft_itoa(va_arg(datas->ap, int));
-		ft_string(datas);
+		if (!(ft_decimal(datas)))
+			return (0);
 	}
+	return(1);
 }
 
 int		ft_printf(const char *chaine, ...)
@@ -51,7 +49,8 @@ int		ft_printf(const char *chaine, ...)
 	{
 		if (chaine[datas.cursor] == '%')
 		{
-			ft_parser(&datas);
+			if(!(ft_parser(&datas)))
+				return (0);
 		}
 		else
 			write(1, &chaine[datas.cursor], 1);

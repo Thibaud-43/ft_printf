@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 13:29:02 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/02 13:43:28 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/02 18:33:28 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,10 @@ static void		ft_precision(t_datas *datas)
 	{
 		datas->chainelen--;
 		NEXT();
-		datas->precision = 0;
 		while (ft_isdigit(STR()) == 1)
 		{
-			datas->precision = datas->precision * 10 + (STR() - 48);
+			datas->precision = 1;
+			datas->precision_len = datas->precision_len * 10 + (STR() - 48);
 			NEXT();
 			datas->chainelen--;
 		}

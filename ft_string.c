@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:24:32 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/02 14:16:37 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/02 15:31:11 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ static int		ft_string_null(t_datas *datas)
 	ft_init_null(null);
 	i = 0;
 	k = 0;
-	while (null[i] && datas->precision > 0)
+	while (null[i] && datas->precision_len > 0)
 	{
-		datas->precision--;
+		datas->precision_len--;
 		i++;
 	}
 	if (!datas->str && datas->left_aligned == 1)
@@ -53,9 +53,9 @@ static int		ft_string_null(t_datas *datas)
 
 static void		ft_string_not_null(t_datas *datas, int i, int k)
 {
-	while (datas->str[i] && datas->precision > 0)
+	while (datas->str[i] && datas->precision_len > 0)
 	{
-		datas->precision--;
+		datas->precision_len--;
 		i++;
 	}
 	if (datas->left_aligned == 1)
@@ -80,6 +80,7 @@ void			ft_string(t_datas *datas)
 
 	i = 0;
 	k = 0;
+	datas->str = va_arg(datas->ap, char *);
 	datas->chainelen--;
 	if (datas->str == NULL)
 	{
