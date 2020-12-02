@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:30:24 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/02 21:02:54 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/02 21:10:32 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,9 +115,9 @@ int		ft_decimal(t_datas *datas)
 		i++;
 	if (datas->precision == 0 && datas->width == 0)
 		write(1, datas->decimal, i);
-	else if (datas->precision == 1 && datas->width && i < datas->precision)
+	else if (datas->precision == 1 && datas->width && i < datas->precision_len)
 		ft_decimal2(datas, &i, &k, is_negative);
-	else if ((datas->precision == 0 || datas->precision < i) && datas->width)
+	else if ((datas->precision == 0 || datas->precision_len <= i) && datas->width)
 		ft_decimal3(datas, &i, &k, is_negative);
 	else if (datas->precision == 1 && datas->width == 0)
 		ft_decimal4(datas, &i, &k, is_negative);
