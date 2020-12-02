@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:30:24 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/02 20:55:35 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/02 21:02:54 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void		ft_decimal2_left(t_datas *datas, int *i, int *k, int is_negative)
 	}
 	write(1, (datas->decimal + is_negative), (*i - is_negative));
 	z = 0;
-	while ((z) < (datas->width - datas->precision_len - is_negative - 1))
+	while ((z) < (datas->width - datas->precision_len - is_negative))
 	{
 		write(1, " ", 1);
 		(*k)++;
@@ -46,7 +46,7 @@ static void		ft_decimal2(t_datas *datas, int *i, int *k, int is_negative)
 		ft_decimal2_left(datas, i, k, is_negative);
 		return ;
 	}
-	while ((*k) < (datas->width - datas->precision_len - is_negative - 1))
+	while ((*k) < (datas->width - datas->precision_len - is_negative))
 	{
 		write(1, " ", 1);
 		(*k)++;
@@ -115,9 +115,9 @@ int		ft_decimal(t_datas *datas)
 		i++;
 	if (datas->precision == 0 && datas->width == 0)
 		write(1, datas->decimal, i);
-	else if (datas->precision == 1 && datas->width)
+	else if (datas->precision == 1 && datas->width && i < datas->precision)
 		ft_decimal2(datas, &i, &k, is_negative);
-	else if (datas->precision == 0 && datas->width)
+	else if ((datas->precision == 0 || datas->precision < i) && datas->width)
 		ft_decimal3(datas, &i, &k, is_negative);
 	else if (datas->precision == 1 && datas->width == 0)
 		ft_decimal4(datas, &i, &k, is_negative);
