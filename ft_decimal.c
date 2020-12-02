@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:30:24 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/02 19:11:26 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/02 19:18:22 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,6 @@ int		ft_decimal(t_datas *datas)
 	
 	
 	free(datas->decimal);
-	datas->chainelen += i + k - is_negative;
+	datas->chainelen += i + k;
 	return (1);
 }
