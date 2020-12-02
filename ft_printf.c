@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:49:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/02 09:55:30 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/02 11:00:07 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,16 @@ void	ft_flags(t_datas *datas)
 {
 	while (STR() != 's' && STR() != 'c' &&	STR() != 'd')
 	{
-		while (ft_isdigit(STR()) == 1)
+		while (ft_isdigit(STR()) == 1 && STR() != '0')
 		{
 			datas->width = datas->width * 10 + (STR() - 48);
 			NEXT();
 			datas->chainelen--;
+		}
+		if (STR() == '0')
+		{
+			datas->zeros_activated = 1;
+			NEXT();
 		}
 		if (STR() == '*')
 		{
