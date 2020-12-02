@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:49:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/02 13:48:49 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/02 13:54:17 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ static void		ft_parse(t_datas *datas)
 	ft_flags(datas);
 	if (STR() == 's' || STR() == 'c')
 		ft_string(datas);
-	if (datas->chaine[datas->cursor] == 'd')
-		ft_decimal(datas);
+	/*if (datas->chaine[datas->cursor] == 'd')
+		ft_decimal(datas);*/
 }
 
 int		ft_printf(const char *chaine, ...)
