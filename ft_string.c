@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:24:32 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/02 10:23:37 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/02 10:26:54 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,7 @@ void	ft_string(t_datas *datas)
 	if (!datas->str)
 		i = 6;
 	if (!datas->str && datas->left_aligned == 1)
-	{
 		write(1, "(null)", 6);
-		datas->chainelen += 6;
-	}
 	while (datas->str && datas->str[i] && datas->precision > 0)
 	{
 		datas->precision--;
@@ -43,11 +40,7 @@ void	ft_string(t_datas *datas)
 		k++;
 	}
 	if (!datas->str && datas->left_aligned == 0)
-	{
 		write(1, "(null)", 6);
-		datas->chainelen += 6;
-	}
-
 	if (datas->str && datas->left_aligned == 0)
 		write(1, datas->str, i);
 	datas->chainelen += i + k;
