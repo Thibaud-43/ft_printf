@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 17:35:45 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/02 13:37:48 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/02 14:04:12 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct  s_datas
 	char	*chaine;
 	int		chainelen;	
 	char	*str;
-	int		decimal;
+	char	*decimal;
 	int		width;
 	int		precision;
 	int		left_aligned;
@@ -43,6 +43,7 @@ typedef struct  s_datas
 
 }				t_datas;
 
+void			ft_decimal(t_datas *datas);
 void			ft_flags(t_datas *datas);
 int				ft_printf(const char *chaine, ...);
 void			ft_string(t_datas *datas);

@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:30:24 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/01 09:38:36 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/02 14:10:40 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 
 void		ft_decimal(t_datas *datas)
 {
-	datas->decimal = va_arg(datas->ap, int);
+	int i;
 	
+	i = 0;
+	datas->chainelen--;
+	datas->decimal = ft_itoa(va_arg(datas->ap, int));
+	while (datas->decimal[i])
+		i++;
+	write(1, datas->decimal, i);
+	datas->chainelen += i;
 }
