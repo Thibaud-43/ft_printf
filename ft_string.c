@@ -6,15 +6,14 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:24:32 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/02 11:05:30 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/02 13:45:58 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_init_null(char *null)
+static void		ft_init_null(char *null)
 {
-
 	null[0] = '(';
 	null[1] = 'n';
 	null[2] = 'u';
@@ -23,12 +22,12 @@ void	ft_init_null(char *null)
 	null[5] = ')';
 }
 
-int		ft_string_null(t_datas *datas)
+static int		ft_string_null(t_datas *datas)
 {
 	int		i;
 	int		k;
 	char	null[6];
-	
+
 	ft_init_null(null);
 	i = 0;
 	k = 0;
@@ -42,7 +41,7 @@ int		ft_string_null(t_datas *datas)
 	while (k < (datas->width - i))
 	{
 		if (datas->zero_activated == 1)
-			write (1, "0", 1);
+			write(1, "0", 1);
 		else
 			write(1, " ", 1);
 		k++;
@@ -52,21 +51,8 @@ int		ft_string_null(t_datas *datas)
 	return (i + k);
 }
 
-void	ft_string(t_datas *datas)
+static void		ft_string_not_null(t_datas *datas, int i, int k)
 {
-	int i;
-	int k;
-
-	i = 0;
-	k = 0;
-
-	datas->chainelen--;
-	datas->str = va_arg(datas->ap, char *);
-	if (datas->str == NULL)
-	{
-		datas->chainelen += ft_string_null(datas);
-		return ;
-	}
 	while (datas->str[i] && datas->precision > 0)
 	{
 		datas->precision--;
@@ -85,4 +71,21 @@ void	ft_string(t_datas *datas)
 	if (datas->left_aligned == 0)
 		write(1, datas->str, i);
 	datas->chainelen += i + k;
+}
+
+void			ft_string(t_datas *datas)
+{
+	int i;
+	int k;
+
+	i = 0;
+	k = 0;
+	datas->chainelen--;
+	datas->str = va_arg(datas->ap, char *);
+	if (datas->str == NULL)
+	{
+		datas->chainelen += ft_string_null(datas);
+		return ;
+	}
+	ft_string_not_null(datas, i, k);
 }
