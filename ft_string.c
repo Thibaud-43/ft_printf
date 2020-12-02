@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:24:32 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/02 13:45:58 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/02 14:16:37 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void			ft_string(t_datas *datas)
 	i = 0;
 	k = 0;
 	datas->chainelen--;
-	datas->str = va_arg(datas->ap, char *);
 	if (datas->str == NULL)
 	{
 		datas->chainelen += ft_string_null(datas);

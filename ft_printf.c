@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:49:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/02 14:08:22 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/02 14:18:19 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,15 @@ static void		ft_parser(t_datas *datas)
 	ft_initializer(datas);
 	ft_flags(datas);
 	if (STR() == 's' || STR() == 'c')
+	{
+		datas->str = va_arg(datas->ap, char *);
 		ft_string(datas);
+	}
 	if (STR() == 'd')
-		ft_decimal(datas);
+	{
+		datas->str = ft_itoa(va_arg(datas->ap, int));
+		ft_string(datas);
+	}
 }
 
 int		ft_printf(const char *chaine, ...)
