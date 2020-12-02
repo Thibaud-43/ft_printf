@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:49:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/02 11:16:31 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/02 11:19:22 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_flags(t_datas *datas)
 	if (STR() == '0')
 	{
 		datas->zero_activated = 1;
+		datas->chainelen--;
 		NEXT();
 	}
 	while (STR() != 's' && STR() != 'c' &&	STR() != 'd')
