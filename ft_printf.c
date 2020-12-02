@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:49:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/01 16:21:21 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/02 09:55:30 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,57 @@ void		ft_initializer(t_datas *datas)
 	datas->decimal = 0;
 	datas->width = 0;
 	datas->left_aligned = 0;
+	datas->precision = 2000000;
 }
 
 void	ft_flags(t_datas *datas)
 {
 	while (STR() != 's' && STR() != 'c' &&	STR() != 'd')
 	{
-		if (ft_isdigit(STR()) == 1)
+		while (ft_isdigit(STR()) == 1)
+		{
 			datas->width = datas->width * 10 + (STR() - 48);
+			NEXT();
+			datas->chainelen--;
+		}
 		if (STR() == '*')
+		{
 			datas->width = va_arg(datas->ap, int);
+			NEXT();
+			datas->chainelen--;
+		}
 		if (STR() == '-')
-			datas->left_aligned = 1;		
-		datas->cursor++;
-		datas->chainelen--;
+		{
+			datas->left_aligned = 1;
+			NEXT();
+			datas->chainelen--;
+		}
+		if (STR() == '.')
+		{
+			datas->chainelen--;
+			NEXT();
+			datas->precision = 0;
+			while (ft_isdigit(STR()) == 1)
+			{
+				datas->precision = datas->precision * 10 + (STR() - 48);
+				NEXT();
+				datas->chainelen--;
+			}
+		}
 	}
-	
 }
 
 void	ft_parse(t_datas *datas)
 {
 	
-	datas->cursor++;
+	NEXT();
 	datas->chainelen--;
 // RESET DES PARAMS VARIABLES DE LA STRUCT //
 	ft_initializer(datas);
 // DETERMINATION DES FLAGS //
 	ft_flags(datas);
 // STRINGS //
+//	printf (" width : %d", datas->width);
 	if (STR() == 's' || STR() == 'c')
 		ft_string(datas);
 /*	if (datas->chaine[datas->cursor] == 'd')

@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 17:35:45 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/01 16:03:28 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/01 17:21:54 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #include <assert.h>
 #include <stdarg.h>
 # define STR() datas->chaine[datas->cursor]
+# define STR2() datas->chaine[datas->cursor++]
+# define NEXT() datas->cursor++
 
 typedef struct	s_list
 {
@@ -35,6 +37,7 @@ typedef struct  s_datas
 	char	*str;
 	int		decimal;
 	int		width;
+	int		precision;
 	int		left_aligned;
 
 }				t_datas;
