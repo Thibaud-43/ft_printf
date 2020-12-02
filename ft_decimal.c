@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:30:24 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/02 19:18:22 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/02 19:27:31 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,13 @@ static void		ft_decimal2(t_datas *datas, int *i, int *k, int is_negative)
 	}
 }
 
-static void		ft_decimal3(t_datas *datas, int *i, int *k)
+static void		ft_decimal3(t_datas *datas, int *i, int *k, int is_negative)
 {
+	if (is_negative)
+		write(1, "-", 1);
 	if (datas->left_aligned == 1)
 		write(1, (datas->decimal), (*i));
-	while ((*k) < (datas->width - *i))
+	while ((*k) < (datas->width - *i ))
 	{
 		if (datas->zero_activated)
 			write(1, "0", 1);
@@ -84,7 +86,7 @@ static void		ft_decimal3(t_datas *datas, int *i, int *k)
 		(*k)++;
 	}
 	if (datas->left_aligned == 0)
-		write(1, (datas->decimal), (*i));
+		write(1, (datas->decimal + is_negative), (*i - is_negative));
 }
 
 static void		ft_decimal4(t_datas *datas, int *i, int *k, int is_negative)
@@ -120,7 +122,7 @@ int		ft_decimal(t_datas *datas)
 	else if (datas->precision == 1 && datas->width)
 		ft_decimal2(datas, &i, &k, is_negative);
 	else if (datas->precision == 0 && datas->width)
-		ft_decimal3(datas, &i, &k);
+		ft_decimal3(datas, &i, &k, is_negative);
 	else if (datas->precision == 1 && datas->width == 0)
 		ft_decimal4(datas, &i, &k, is_negative);
 	
