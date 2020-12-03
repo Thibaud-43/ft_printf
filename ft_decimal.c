@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:30:24 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/03 10:04:47 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/03 10:29:48 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static void		ft_decimal3(t_datas *datas, int *i, int *k, int is_negative)
 			write(1, " ", 1);
 		(*k)++;
 	}
-	if (datas->left_aligned == 0)
+		if (datas->left_aligned == 0)
 		write(1, (datas->decimal + is_negative), (*i - is_negative));
 }
 
@@ -104,11 +104,17 @@ int		ft_decimal(t_datas *datas)
 	int is_negative;
 
 	k = 0;
-	i = 0;
 	is_negative = 0;
 	datas->chainelen--;
-	if (!(datas->decimal = ft_itoa(va_arg(datas->ap, int))))
+	i = va_arg(datas->ap, int);
+	if (i == 0 && datas->precision)
+	{
+		ft_decimal_zeros(datas, &k);
+		return (1);
+	}
+	if (!(datas->decimal = ft_itoa(i)))
 		return (0);
+	i = 0;
 	if (datas->decimal[0] == '-')
 		is_negative = 1;
 	while (datas->decimal[i])
