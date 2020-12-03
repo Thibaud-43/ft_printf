@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 13:29:02 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/03 09:34:59 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/03 10:50:00 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ static void		ft_set_width(t_datas *datas)
 	if (STR() == '*')
 	{
 		datas->width = va_arg(datas->ap, int);
+		if (datas->width < 0)
+		{
+			datas->left_aligned = 1;
+			datas->width *= (-1);
+		}
 		NEXT();
 		datas->chainelen--;
 	}
