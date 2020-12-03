@@ -6,13 +6,13 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 09:02:49 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/03 17:21:29 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/03 17:27:04 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_size( unsigned int n)
+static int	ft_count_size(unsigned int n)
 {
 	int i;
 

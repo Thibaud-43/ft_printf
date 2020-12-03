@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:17:06 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/03 17:11:05 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/03 17:25:32 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void		ft_decimal_zeros(t_datas *datas, int *k)
 	}
 }
 
-int				ft_decimal_unsigned(t_datas *datas)
+int			ft_decimal_unsigned(t_datas *datas)
 {
 	int					i;
 	int					k;
@@ -58,4 +58,3 @@ int				ft_decimal_unsigned(t_datas *datas)
 	datas->chainelen += i + k;
 	return (1);
 }
-

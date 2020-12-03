@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:30:24 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/03 17:10:18 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/03 17:25:13 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ static void		ft_decimal3(t_datas *datas, int *i, int *k, int is_negative)
 		write(1, (datas->decimal + is_negative), (*i - is_negative));
 }
 
-void		ft_decimal_next(t_datas *datas, int *i, int *k, int is_negative)
+void			ft_decimal_next(t_datas *datas, int *i, int *k, int is_negative)
 {
 	if (datas->decimal[0] == '-')
 		is_negative = 1;
