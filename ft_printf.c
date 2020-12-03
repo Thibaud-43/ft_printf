@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:49:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/03 17:13:37 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/03 17:52:29 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ static int		ft_parser(t_datas *datas)
 	{
 		if (!(ft_decimal_unsigned(datas)))
 			return (0);
+	}
+	if (STR() == 'p')
+	{
+		ft_pointers(datas);
 	}
 	return (1);
 }
