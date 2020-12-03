@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:49:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/02 15:30:22 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/03 11:37:51 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static void		ft_initializer(t_datas *datas)
 	datas->precision = 0;
 	datas->precision_len = 0;
 	datas->zero_activated = 0;
+	datas->precision_star = 0;
 }
 
 static int		ft_parser(t_datas *datas)
