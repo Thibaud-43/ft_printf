@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:30:24 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/03 10:36:13 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/03 10:37:32 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ int		ft_decimal(t_datas *datas)
 	is_negative = 0;
 	datas->chainelen--;
 	i = va_arg(datas->ap, int);
-	if (i == 0 && datas->precision_len == 0)
+	if (i == 0 && datas->precision_len == 0 && datas->precision)
 	{
 		ft_decimal_zeros(datas, &k);
 		datas->chainelen += i + k;
