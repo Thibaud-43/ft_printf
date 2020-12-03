@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 17:35:45 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/03 12:11:54 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/03 14:05:00 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct  s_datas
 
 }				t_datas;
 
+void			ft_character(t_datas *datas);
 void			ft_decimal4(t_datas *datas, int *i, int *k, int is_negative);
 void			ft_decimal_zeros(t_datas *datas, int *k);
 int				ft_decimal(t_datas *datas);

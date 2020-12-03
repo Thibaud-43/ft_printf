@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:49:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/03 12:14:38 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/03 14:03:10 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,15 @@ static int		ft_parser(t_datas *datas)
 	datas->chainelen--;
 	ft_initializer(datas);
 	ft_flags(datas);
-	if (STR() == 's' || STR() == 'c')
+	if (STR() == 's')
 		ft_string(datas);
 	if (STR() == 'd')
 	{
 		if (!(ft_decimal(datas)))
 			return (0);
 	}
+	if (STR() == 'c')
+		ft_character(datas);
 	return (1);
 }
 
