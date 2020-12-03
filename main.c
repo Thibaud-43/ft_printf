@@ -8,11 +8,11 @@ int main(int argc, char **argv)
 		int ret2;
 
         ft_printf("[MON PRINTF]\n");
-		ret1 = ft_printf("%s\n", argv[1]);
-      	printf("OUTPUT [%d]\n", ret1);
+		ret1 = ft_printf("%.s", argv[1]);
+      	printf("\nOUTPUT [%d]\n", ret1);
 
         printf("\n\n[PRINTF]\n");
-		ret2 = printf("%s\n", argv[1]);
-      	printf("OUTPUT [%d]\n", ret2);
+		ret2 = printf("%.s", argv[1]);
+      	printf("\nOUTPUT [%d]\n", ret2);
 		return 1;
 }
