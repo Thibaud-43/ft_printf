@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 14:03:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/03 14:29:43 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/03 14:31:43 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void		ft_character(t_datas *datas)
 {
 	int i;
-	
+
 	i = 0;
 	datas->chainelen--;
 	datas->c = va_arg(datas->ap, int);
