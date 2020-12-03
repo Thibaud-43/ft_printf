@@ -6,9 +6,11 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:17:06 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/03 10:28:59 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/03 10:32:27 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_decimal_zeros(t_datas *datas, int *k)
 {
