@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:24:32 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/02 15:31:11 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/03 09:29:39 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,10 @@ static int		ft_string_null(t_datas *datas)
 	ft_init_null(null);
 	i = 0;
 	k = 0;
-	while (null[i] && datas->precision_len > 0)
-	{
-		datas->precision_len--;
+	while (datas->str[i])
 		i++;
-	}
+	if (i > datas->precision_len && datas->precision)
+		i = datas->precision_len;
 	if (!datas->str && datas->left_aligned == 1)
 		write(1, "(null)", i);
 	while (k < (datas->width - i))
@@ -53,11 +52,10 @@ static int		ft_string_null(t_datas *datas)
 
 static void		ft_string_not_null(t_datas *datas, int i, int k)
 {
-	while (datas->str[i] && datas->precision_len > 0)
-	{
-		datas->precision_len--;
+	while (datas->str[i])
 		i++;
-	}
+	if (i > datas->precision_len && datas->precision)
+		i = datas->precision_len;
 	if (datas->left_aligned == 1)
 		write(1, datas->str, i);
 	while (k < (datas->width - i))
