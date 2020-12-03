@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:49:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/03 14:03:10 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/03 14:41:35 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int		ft_parser(t_datas *datas)
 	ft_flags(datas);
 	if (STR() == 's')
 		ft_string(datas);
-	if (STR() == 'd')
+	if (STR() == 'd' || STR() == 'i')
 	{
 		if (!(ft_decimal(datas)))
 			return (0);
