@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:24:32 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/03 09:45:46 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/03 09:53:15 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ static int		ft_string_null(t_datas *datas)
 	k = 0;
 	if (i > datas->precision_len && datas->precision)
 		i = datas->precision_len;
-	if (datas->precision_len < 6 && datas->precision)
-		i = 0;
 	if (!datas->str && datas->left_aligned == 1)
 		write(1, "(null)", i);
 	while (k < (datas->width - i))
