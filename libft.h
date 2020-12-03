@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 17:35:45 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/03 14:08:12 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/03 17:11:58 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,12 @@ typedef struct  s_datas
 
 }				t_datas;
 
+void			ft_decimal_next(t_datas *datas, int *i, int *k, int is_negative);
 void			ft_character(t_datas *datas);
 void			ft_decimal4(t_datas *datas, int *i, int *k, int is_negative);
 void			ft_decimal_zeros(t_datas *datas, int *k);
 int				ft_decimal(t_datas *datas);
+int				ft_decimal_unsigned(t_datas *datas);
 void			ft_flags(t_datas *datas);
 int				ft_printf(const char *chaine, ...);
 void			ft_string(t_datas *datas);
@@ -69,6 +71,7 @@ void			ft_putstr_fd(char *s, int fd);
 void			ft_putchar_fd(char c, int fd);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			*ft_itoa(int n);
+char			*ft_itoa_unsigned(unsigned int n);
 char			**ft_split(char const *s, char c);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_strjoin(char const *s1, char const *s2);
