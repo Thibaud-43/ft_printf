@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:49:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/03 11:37:51 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/03 12:14:38 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ static int		ft_parser(t_datas *datas)
 		if (!(ft_decimal(datas)))
 			return (0);
 	}
-	return(1);
+	return (1);
 }
 
-int		ft_printf(const char *chaine, ...)
+int				ft_printf(const char *chaine, ...)
 {
 	t_datas	datas;
 
@@ -50,7 +50,7 @@ int		ft_printf(const char *chaine, ...)
 	{
 		if (chaine[datas.cursor] == '%')
 		{
-			if(!(ft_parser(&datas)))
+			if (!(ft_parser(&datas)))
 				return (0);
 		}
 		else
