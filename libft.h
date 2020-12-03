@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 17:35:45 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/03 14:05:00 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/03 14:08:12 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct  s_datas
 	int		precision_star;
 	int		left_aligned;
 	int		zero_activated;
+	int		c;
 
 }				t_datas;
 
