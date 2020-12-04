@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 17:53:03 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/04 15:16:20 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/04 15:22:53 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,23 @@ void		ft_pointers(t_datas *datas)
 
 void		ft_pourcent(t_datas *datas)
 {
+	int i;
+
+	i = 0;
 	NEXT();
 	datas->chainelen--;
-	datas->chainelen++;
-	write(1, "%", 1);
+	if (datas->left_aligned)
+		write(1, "%", 1);
+	while (i < datas->width - 1)	
+	{
+		if (datas->zero_activated)
+			write(1, "0", 1);
+		else
+			write(1, " ", 1);
+		i++;
+	}
+	if (!datas->left_aligned)
+		write(1, "%", 1);
+
+	datas->chainelen += i + 1;
 }
