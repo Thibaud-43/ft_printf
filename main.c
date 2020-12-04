@@ -8,12 +8,12 @@ int main(int argc, char **argv)
 		int ret2;
 		int a;
 
-        /*ft_printf("[MON PRINTF]\n");
-		ret1 = ft_printf("%10u", atoi(argv[1]));
-      	printf("\nOUTPUT [%d]\n", ret1);*/
-		a =	12;
+		a =	5;
+        ft_printf("[MON PRINTF]\n");
+		ret1 = ft_printf("%p", &a);
+      	printf("\nOUTPUT [%d]\n", ret1);
         printf("\n\n[PRINTF]\n");
-		ret2 = printf("%-40.30p", &a);
+		ret2 = printf("%p", &a);
       	printf("\nOUTPUT [%d]\n", ret2);
 		return 1;
 }

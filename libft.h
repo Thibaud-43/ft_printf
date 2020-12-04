@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 17:35:45 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/03 17:54:24 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/04 11:15:51 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,24 @@ typedef struct	s_list
 
 typedef struct  s_datas
 {
-	va_list	ap;
-	int		cursor;
-	char	*chaine;
-	int		chainelen;	
-	char	*str;
-	char	*decimal;
-	int		width;
-	int		precision;
-	int		precision_len;
-	int		precision_star;
-	int		left_aligned;
-	int		zero_activated;
-	int		c;
+	va_list			ap;
+	int				cursor;
+	char			*chaine;
+	int				chainelen;	
+	char			*str;
+	char			*decimal;
+	int				width;
+	int				precision;
+	int				precision_len;
+	int				precision_star;
+	int				left_aligned;
+	int				zero_activated;
+	int				c;
+	char	 		*pointers;
 
 }				t_datas;
 
+char			*ft_itoa_unsigned_hexadecimal(unsigned long num, char *base);
 void			ft_pointers(t_datas *datas);
 void			ft_decimal_next(t_datas *datas, int *i, int *k, int is_negative);
 void			ft_character(t_datas *datas);
