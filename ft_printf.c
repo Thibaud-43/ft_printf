@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:49:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/03 17:52:29 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/04 15:13:36 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ static int		ft_parser(t_datas *datas)
 			return (0);
 	}
 	if (STR() == 'p')
-	{
 		ft_pointers(datas);
-	}
+	if (STR() == '%')
+		ft_pourcent(datas);
 	return (1);
 }
 
@@ -66,7 +66,8 @@ int				ft_printf(const char *chaine, ...)
 		}
 		else
 			write(1, &chaine[datas.cursor], 1);
-		datas.cursor++;
+		if (chaine[datas.cursor])
+			datas.cursor++;
 	}
 	va_end(datas.ap);
 	return (datas.chainelen);
