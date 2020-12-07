@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 13:29:02 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 16:54:48 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 16:59:22 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static void		ft_set_width_2(t_datas *datas, int tmp)
 			else
 				datas->width = tmp;
 		}
+		datas->cursor++;
 	}
 }
 
