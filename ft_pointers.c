@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 17:53:03 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 09:45:02 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 09:57:13 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void		ft_pointers(t_datas *datas)
 	k = 0;
 	i = 0;
 	z = 0;
-	NEXT();
 	datas->chainelen--;
 	datas->pointers = ft_itoa_unsigned_hexadecimal(va_arg(datas->ap, unsigned long), 
 	"0123456789abcdef");
