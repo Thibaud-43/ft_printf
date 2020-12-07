@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 13:29:02 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 13:26:04 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 14:42:17 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,11 @@ void			ft_flags(t_datas *datas)
 {
 	ft_fill_with_zeros(datas);
 	while (STR() != 's' && STR() != 'c' && STR() != 'd' &&
-			STR() != 'i' && STR() != 'u' && STR() != 'p' && STR() != '%' && 
+			STR() != 'i' && STR() != 'u' && STR() != 'p' && STR() != '%' &&
 			STR() != 'x' && STR() != 'X')
 	{
 		if (STR() == 0)
-			return;
+			return ;
 		ft_set_width(datas);
 		ft_left_aligned(datas);
 		ft_precision(datas);

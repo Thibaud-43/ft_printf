@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:49:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 13:36:11 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 14:44:55 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,8 @@ static void		ft_initializer(t_datas *datas)
 	datas->precision_star = 0;
 }
 
-static int		ft_parser(t_datas *datas)
+static int		ft_parser_2(t_datas *datas)
 {
-	NEXT();
-	datas->chainelen--;
-	ft_initializer(datas);
-	ft_flags(datas);
 	if (STR() == 0)
 		return (0);
 	if (STR() == '%')
@@ -41,6 +37,17 @@ static int		ft_parser(t_datas *datas)
 	}
 	if (STR() == 'c')
 		ft_character(datas);
+	return (1);
+}
+
+static int		ft_parser_1(t_datas *datas)
+{
+	NEXT();
+	datas->chainelen--;
+	ft_initializer(datas);
+	ft_flags(datas);
+	if (!ft_parser_2(datas))
+		return (0);
 	if (STR() == 'u')
 	{
 		if (!(ft_decimal_unsigned(datas)))
@@ -67,7 +74,7 @@ int				ft_printf(const char *chaine, ...)
 	{
 		if (chaine[datas.cursor] == '%')
 		{
-			if (!(ft_parser(&datas)))
+			if (!(ft_parser_1(&datas)))
 				return (0);
 		}
 		else
