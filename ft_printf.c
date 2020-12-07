@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:49:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 09:57:34 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 11:59:38 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static int		ft_parser(t_datas *datas)
 	datas->chainelen--;
 	ft_initializer(datas);
 	ft_flags(datas);
+	if (STR() == 0)
+		return (0);
 	if (STR() == '%')
 		ft_pourcent(datas);
 	if (STR() == 's')
