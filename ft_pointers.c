@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 17:53:03 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 11:22:55 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 11:29:04 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void		ft_zeros(t_datas *datas, int i, int k, int z)
 {
 	k = 3;
-	if (datas->precision && datas->precision < 3)
+	if (datas->precision && datas->precision < 3 && datas->precision_star == 0)
 		k = 2;
 	if (datas->left_aligned)
 	{
@@ -58,7 +58,7 @@ void		ft_pointers(t_datas *datas)
 	z = 0;
 	datas->chainelen--;
 	nb = va_arg(datas->ap, unsigned long);
-	if (nb == 0 && datas->precision_len < 3)
+	if (nb == 0 && datas->precision_len <= 3)
 	{
 		ft_zeros(datas, k, i, z);
 		return ;
