@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 11:47:56 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 11:50:57 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 14:54:37 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void			ft_pourcent(t_datas *datas)
 	int i;
 
 	i = 0;
-	NEXT();
 	datas->chainelen--;
 	if (datas->left_aligned)
 		write(1, "%", 1);
