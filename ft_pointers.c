@@ -6,55 +6,36 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 17:53:03 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 10:35:18 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 10:47:23 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void		ft_zeros_precision(t_datas *datas, int i, int k, int z)
+static void		ft_zeros(t_datas *datas, int i, int k, int z)
 {
 	k = 2;
-	if (datas->zero_activated)
-		write(1, "0x", 2);
 	if (datas->left_aligned)
-	{			
-		if (!datas->zero_activated)
-			write(1, "0x", 2);
-		while (datas->precision && z < datas->precision_len - k)
+	{
+		write(1, "0x0", 3);
+		while (datas->precision && z < datas->precision_len - 3)
 		{
 			write(1, "0", 1);
 			z++;
 		}
 	}
-	if (!datas->precision)
+	while (i < (datas->width - 3))
 	{
-		while (i < (datas->width - datas->precision_len - k - 2))
-		{
-			if (datas->zero_activated)
-				write(1, "0", 1);
-			else 
-				write(1, " ", 1);
-			i++;
-		}
+		if (datas->zero_activated)
+			write(1, "0", 1);
+		else 
+			write(1, " ", 1);
+		i++;
 	}
-	else
-	{
-		while (i < (datas->width - datas->precision_len - 2))
-		{
-			if (datas->zero_activated)
-				write(1, "0", 1);
-			else 
-				write(1, " ", 1);
-			i++;
-		}
-	}
-
 	if (!datas->left_aligned)
 	{
-		if (!datas->zero_activated)
-			write(1, "0x", 2);
-		while (datas->precision && z < datas->precision_len - k)
+		write(1, "0x0", 3);
+		while (datas->precision && z < datas->precision_len - 3)
 		{
 			write(1, "0", 1);
 			z++;
@@ -75,9 +56,9 @@ void		ft_pointers(t_datas *datas)
 	z = 0;
 	datas->chainelen--;
 	nb = va_arg(datas->ap, unsigned long);
-	if (nb == 0 && datas->precision_len <= 3)
+	if (nb == 0)
 	{
-		ft_zeros_precision(datas, k, i, z);
+		ft_zeros(datas, k, i, z);
 		return ;
 	}
 	datas->pointers = ft_itoa_unsigned_hexadecimal(nb, "0123456789abcdef");
