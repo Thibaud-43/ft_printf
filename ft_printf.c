@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:49:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 14:56:37 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 16:22:35 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,43 +24,44 @@ static void		ft_initializer(t_datas *datas)
 
 static int		ft_parser_2(t_datas *datas)
 {
-	if (STR() == 0)
+	if (datas->chaine[datas->cursor++] == 0)
 		return (0);
-	if (STR() == '%')
+	if (datas->chaine[datas->cursor++] == '%')
 	{
 		ft_pourcent(datas);
 		return (1);
 	}
-	if (STR() == 's')
+	if (datas->chaine[datas->cursor++] == 's')
 		ft_string(datas);
-	if (STR() == 'd' || STR() == 'i')
+	if (datas->chaine[datas->cursor++] == 'd'
+	|| datas->chaine[datas->cursor++] == 'i')
 	{
 		if (!(ft_decimal(datas)))
 			return (0);
 	}
-	if (STR() == 'c')
+	if (datas->chaine[datas->cursor++] == 'c')
 		ft_character(datas);
 	return (1);
 }
 
 static int		ft_parser_1(t_datas *datas)
 {
-	NEXT();
+	datas->cursor++;
 	datas->chainelen--;
 	ft_initializer(datas);
 	ft_flags(datas);
 	if (!ft_parser_2(datas))
 		return (0);
-	if (STR() == 'u')
+	if (datas->chaine[datas->cursor++] == 'u')
 	{
 		if (!(ft_decimal_unsigned(datas)))
 			return (0);
 	}
-	if (STR() == 'p')
+	if (datas->chaine[datas->cursor++] == 'p')
 		ft_pointers(datas);
-	if (STR() == 'x')
+	if (datas->chaine[datas->cursor++] == 'x')
 		ft_hexadecimal(datas, 0);
-	if (STR() == 'X')
+	if (datas->chaine[datas->cursor++] == 'X')
 		ft_hexadecimal(datas, 1);
 	return (1);
 }
