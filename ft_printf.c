@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:49:29 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 14:54:22 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 14:56:37 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int		ft_parser_2(t_datas *datas)
 	if (STR() == '%')
 	{
 		ft_pourcent(datas);
-		return (0);
+		return (1);
 	}
 	if (STR() == 's')
 		ft_string(datas);
