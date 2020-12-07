@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 17:35:45 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/04 15:14:24 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 11:49:24 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct  s_datas
 
 }				t_datas;
 
+void				ft_zeros(t_datas *datas, int i, int k, int z);
 void			ft_pourcent(t_datas *datas);
 char			*ft_itoa_unsigned_hexadecimal(unsigned long num, char *base);
 void			ft_pointers(t_datas *datas);
