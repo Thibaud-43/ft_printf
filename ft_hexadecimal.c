@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 13:26:23 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 14:17:42 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 14:26:21 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void		ft_hexadecimal(t_datas *datas, int majuscule)
 		datas->decimal = ft_itoa_hexadecimal((unsigned int)nb, "0123456789abcdef");
 	while(datas->decimal[k])
 		k++;
+	if (data-s->decimal[0] == '0' && datas->decimal[1] == 0)
+		k = 0;
 	if (datas->left_aligned)
 	{
 		tmp = k;
@@ -71,5 +73,6 @@ void		ft_hexadecimal(t_datas *datas, int majuscule)
 
 		write(1, datas->decimal, tmp);
 	}
+	free(datas->decimal);
 	datas->chainelen += k + z;
 }
