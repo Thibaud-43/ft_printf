@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 13:29:02 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 17:22:29 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 17:26:34 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ static void		ft_set_width_2(t_datas *datas, int tmp)
 			else
 				datas->width = tmp;
 		}
-		datas->cursor++;
-		datas->chainelen--;
 	}
 }
 
@@ -54,7 +52,12 @@ static void		ft_set_width(t_datas *datas)
 		datas->cursor++;
 		datas->chainelen--;
 	}
-	ft_set_width_2(datas, tmp);
+	if (datas->chaine[datas->cursor] == '*')
+	{
+		ft_set_width_2(datas, tmp);
+		datas->cursor++;
+		datas->chainelen--;
+	}
 }
 
 static void		ft_left_aligned(t_datas *datas)
@@ -77,7 +80,8 @@ static void		ft_precision(t_datas *datas)
 		datas->cursor++;
 		while (ft_isdigit(datas->chaine[datas->cursor]) == 1)
 		{
-			datas->precision_len = (datas->precision_len * 10 + (datas->chaine[datas->cursor] - 48));
+			datas->precision_len = (datas->precision_len * 10 +
+			(datas->chaine[datas->cursor] - 48));
 			datas->cursor++;
 			datas->chainelen--;
 		}

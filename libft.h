@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 17:35:45 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 16:49:46 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 17:24:10 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <assert.h>
 # include <stdarg.h>
-#include <stdio.h>
 
 typedef struct	s_datas
 {
