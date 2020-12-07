@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 17:53:03 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 11:11:12 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 11:20:33 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ void		ft_pointers(t_datas *datas)
 	datas->pointers = ft_itoa_unsigned_hexadecimal(nb, "0123456789abcdef");
 	while (datas->pointers[k])
 		k++;
+	if (datas->precision && k > datas->precision_len)
+		datas->precision_len = k;
 	if (datas->zero_activated)
 		write(1, "0x", 2);
 	if (datas->left_aligned)
@@ -81,7 +83,7 @@ void		ft_pointers(t_datas *datas)
 	}
 	if (!datas->precision)
 	{
-		while (i < (datas->width - datas->precision_len - k - 2))
+		while (i < (datas->width - k - 2))
 		{
 			if (datas->zero_activated)
 				write(1, "0", 1);
