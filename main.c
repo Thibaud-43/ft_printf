@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 		c =	5;
 		d =	5;
         ft_printf("[MON PRINTF]\n");
-		ret1 = ft_printf("%%");
+		ret1 = ft_printf("%35%");
       	printf("\nOUTPUT [%d]\n", ret1);
         printf("\n\n[PRINTF]\n");
 		ret2 = printf("%p%p%60.35p%p", &a, &b, &c, &d);
