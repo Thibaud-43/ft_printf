@@ -3,6 +3,6 @@
 
 int	main(void)
 {
-	ft_printf("%s", "ok");
+	ft_printf("%10.3s", "ok");
 	return (1);	
 }
