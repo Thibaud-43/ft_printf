@@ -3,6 +3,9 @@
 
 int	main(void)
 {
-	ft_printf("%10.3s", "ok");
+	int ret;
+
+	ret = ft_printf("%16s", "nark nark");
+	printf (" output [%d]", ret);
 	return (1);	
 }
