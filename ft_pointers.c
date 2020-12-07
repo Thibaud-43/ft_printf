@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 17:53:03 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 10:53:47 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 10:58:56 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void		ft_zeros(t_datas *datas, int i, int k, int z)
 	k = 2;
 	if (datas->left_aligned)
 	{
-		write(1, "0x", 3);
+		write(1, "0x", 2);
 		while (datas->precision && z < datas->precision_len - k)
 		{
 			write(1, "0", 1);
@@ -34,7 +34,7 @@ static void		ft_zeros(t_datas *datas, int i, int k, int z)
 	}
 	if (!datas->left_aligned)
 	{
-		write(1, "0x", 3);
+		write(1, "0x", 2);
 		while (datas->precision && z < datas->precision_len - k)
 		{
 			write(1, "0", 1);
