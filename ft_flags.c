@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 13:29:02 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 15:09:00 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 15:11:08 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,10 @@ void			ft_flags(t_datas *datas)
 		if (STR() == 0)
 			return ;
 		if (STR() == ' ')
+		{
+			write(1, " ", 1);
 			NEXT();
+		}
 		ft_set_width(datas);
 		ft_left_aligned(datas);
 		ft_precision(datas);
