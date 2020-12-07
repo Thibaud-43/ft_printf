@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 13:29:02 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 17:09:17 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 17:20:18 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ static void		ft_set_width(t_datas *datas)
 		datas->chainelen--;
 	}
 	ft_set_width_2(datas, tmp);
-	datas->chainelen--;
 }
 
 static void		ft_left_aligned(t_datas *datas)
