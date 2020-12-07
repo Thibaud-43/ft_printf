@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 13:26:23 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 14:15:19 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 14:17:42 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ void		ft_hexadecimal(t_datas *datas, int majuscule)
 		write(1, datas->decimal, tmp);
 		while (z < (datas->width - k))
 		{
-			write(1, " ", 1);
+			if (datas->zero_activated && !datas->precision)
+				write(1, "0", 1);
+			else
+				write(1, " ", 1);
 			z++;
 		}
 	}
@@ -53,7 +56,10 @@ void		ft_hexadecimal(t_datas *datas, int majuscule)
 			tmp = datas->precision_len;
 		while (z < (datas->width - tmp))
 		{
-			write(1, " ", 1);
+			if (datas->zero_activated && !datas->precision)
+				write(1, "0", 1);
+			else
+				write(1, " ", 1);
 			z++;	
 		}
 		tmp = k;
