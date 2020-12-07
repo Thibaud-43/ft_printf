@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 13:29:02 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 15:11:08 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 15:33:28 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ static void		ft_fill_with_zeros(t_datas *datas)
 
 static void		ft_set_width(t_datas *datas)
 {
+	int tmp;
+
+	tmp = 0;
 	while (ft_isdigit(STR()) == 1)
 	{
 		datas->width = datas->width * 10 + (STR() - 48);
@@ -32,17 +35,28 @@ static void		ft_set_width(t_datas *datas)
 	}
 	if (STR() == '*')
 	{
-		datas->width = va_arg(datas->ap, int);
-		if (datas->width < 0 && datas->precision)
+		tmp = va_arg(datas->ap, int);
+		if (datas->precision)
 		{
-			datas->left_aligned = 1;
 			datas->precision_star = 1;
-			datas->precision_len = datas->width * (-1);
+			if (tmp < 0)
+			{	
+				datas->left_aligned = 1;
+				datas->precision_len = tmp * (-1);
+			}
+			else
+				datas->precision_len = tmp;
 		}
-		if (datas->width < 0 && datas->precision == 0)
+		if (!datas->precision)
 		{
-			datas->left_aligned = 1;
-			datas->width *= (-1);
+			write(1, "ok", 2);
+			if (tmp < 0)
+			{	
+				datas->left_aligned = 1;
+				datas->width = tmp * (-1);
+			}
+			else
+				datas->width = tmp;
 		}
 		NEXT();
 		datas->chainelen--;
@@ -79,9 +93,6 @@ static void		ft_precision(t_datas *datas)
 void			ft_flags(t_datas *datas)
 {
 	ft_fill_with_zeros(datas);
-	/*while (STR() != 's' && STR() != 'c' && STR() != 'd' &&
-			STR() != 'i' && STR() != 'u' && STR() != 'p' && STR() != '%' &&
-			STR() != 'x' && STR() != 'X')*/
 	while (ft_isdigit(STR()) || STR() == '-' || STR() == '.' || STR() == '*' || STR() == ' ')
 	{
 		if (STR() == 0)
