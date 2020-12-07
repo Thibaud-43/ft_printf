@@ -17,10 +17,10 @@ int main(int argc, char **argv)
 		c =	5;
 		d =	5;
         ft_printf("[MON PRINTF]\n");
-		ret1 = ft_printf("%35%");
+		ret1 = ft_printf("%p%p", &a, &b);
       	printf("\nOUTPUT [%d]\n", ret1);
         printf("\n\n[PRINTF]\n");
-		ret2 = printf("%p%p%60.35p%p", &a, &b, &c, &d);
+		ret2 = printf("%p%p", &a, &b);
       	printf("\nOUTPUT [%d]\n", ret2);
 		return 1;
 }
