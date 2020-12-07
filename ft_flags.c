@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 13:29:02 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 15:33:28 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 15:35:07 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ static void		ft_set_width(t_datas *datas)
 		}
 		if (!datas->precision)
 		{
-			write(1, "ok", 2);
 			if (tmp < 0)
 			{	
 				datas->left_aligned = 1;
