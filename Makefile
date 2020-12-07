@@ -6,11 +6,11 @@
 #    By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/20 17:04:20 by trouchon          #+#    #+#              #
-#    Updated: 2020/12/07 11:51:28 by trouchon         ###   ########.fr        #
+#    Updated: 2020/12/07 13:35:05 by trouchon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			= ft_pointers2.c ft_itoa_unsigned_hexadecimal.c ft_pointers.c ft_itoa_unsigned.c ft_character.c ft_decimal_2.c ft_itoa.c ft_decimal.c ft_flags.c ft_isdigit.c ft_printf.c ft_string.c ft_strlen.c
+SRCS			= ft_hexadecimal.c ft_pointers2.c ft_itoa_unsigned_hexadecimal.c ft_pointers.c ft_itoa_unsigned.c ft_character.c ft_decimal_2.c ft_itoa.c ft_decimal.c ft_flags.c ft_isdigit.c ft_printf.c ft_string.c ft_strlen.c
 OBJS			= $(SRCS:.c=.o)
 BONUS_OBJS		= $(BONUS:.c=.o)
 CC				= clang

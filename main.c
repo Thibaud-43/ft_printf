@@ -6,21 +6,11 @@ int main(int argc, char **argv)
         (void)argc;
 		int ret1;
 		int ret2;
-		int a;
-		int b;
-		int c;
-		int d;
-		char *z;
-
-		a =	5;
-		b =	5;
-		c =	5;
-		d =	5;
         ft_printf("[MON PRINTF]\n");
-		ret1 = ft_printf("%60.35p", &a);
+		ret1 = ft_printf("%-50X", atoi(argv[1]));
       	printf("\nOUTPUT [%d]\n", ret1);
         printf("\n\n[PRINTF]\n");
-		ret2 = printf("%60.35p", &a);
+		ret2 = printf("%-50X", atoi(argv[1]));
       	printf("\nOUTPUT [%d]\n", ret2);
 		return 1;
 }

@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 17:35:45 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 11:49:24 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 13:43:23 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 #include <assert.h>
 #include <stdarg.h>
 # define STR() datas->chaine[datas->cursor]
-# define STR2() datas->chaine[datas->cursor++]
 # define NEXT() datas->cursor++
 
 typedef struct	s_list
@@ -47,9 +46,11 @@ typedef struct  s_datas
 
 }				t_datas;
 
-void				ft_zeros(t_datas *datas, int i, int k, int z);
+void			ft_hexadecimal(t_datas *datas, int majuscule);
+void			ft_zeros(t_datas *datas, int i, int k, int z);
 void			ft_pourcent(t_datas *datas);
 char			*ft_itoa_unsigned_hexadecimal(unsigned long num, char *base);
+char			*ft_itoa_hexadecimal(unsigned int num, char *base);
 void			ft_pointers(t_datas *datas);
 void			ft_decimal_next(t_datas *datas, int *i, int *k, int is_negative);
 void			ft_character(t_datas *datas);
