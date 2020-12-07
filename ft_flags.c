@@ -6,7 +6,7 @@
 /*   By: trouchon <trouchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 13:29:02 by trouchon          #+#    #+#             */
-/*   Updated: 2020/12/07 16:22:11 by trouchon         ###   ########.fr       */
+/*   Updated: 2020/12/07 16:29:55 by trouchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void		ft_set_width_2(t_datas *datas, int tmp)
 {
-	if (datas->chaine[datas->cursor++] == '*')
+	if (datas->chaine[datas->cursor] == '*')
 	{
 		tmp = va_arg(datas->ap, int);
 		if (datas->precision)
@@ -46,10 +46,10 @@ static void		ft_set_width(t_datas *datas)
 	int tmp;
 
 	tmp = 0;
-	while (ft_isdigit(datas->chaine[datas->cursor++]) == 1)
+	while (ft_isdigit(datas->chaine[datas->cursor]) == 1)
 	{
 		datas->width = datas->width * 10 +
-		(datas->chaine[datas->cursor++] - 48);
+		(datas->chaine[datas->cursor] - 48);
 		datas->cursor++;
 		datas->chainelen--;
 	}
@@ -60,7 +60,7 @@ static void		ft_set_width(t_datas *datas)
 
 static void		ft_left_aligned(t_datas *datas)
 {
-	if (datas->chaine[datas->cursor++] == '-')
+	if (datas->chaine[datas->cursor] == '-')
 	{
 		datas->left_aligned = 1;
 		datas->cursor++;
@@ -70,16 +70,16 @@ static void		ft_left_aligned(t_datas *datas)
 
 static void		ft_precision(t_datas *datas)
 {
-	if (datas->chaine[datas->cursor++] == '.')
+	if (datas->chaine[datas->cursor] == '.')
 	{
 		datas->chainelen--;
 		datas->precision_len = 0;
 		datas->precision = 1;
 		datas->cursor++;
-		while (ft_isdigit(datas->chaine[datas->cursor++]) == 1)
+		while (ft_isdigit(datas->chaine[datas->cursor]) == 1)
 		{
 			datas->precision_len = datas->precision_len * 10
-			+ (datas->chaine[datas->cursor++] - 48);
+			+ (datas->chaine[datas->cursor] - 48);
 			datas->cursor++;
 			datas->chainelen--;
 		}
@@ -88,21 +88,21 @@ static void		ft_precision(t_datas *datas)
 
 void			ft_flags(t_datas *datas)
 {
-	if (datas->chaine[datas->cursor++] == '0')
+	if (datas->chaine[datas->cursor] == '0')
 	{
 		datas->zero_activated = 1;
 		datas->chainelen--;
 		datas->cursor++;
 	}
-	while (ft_isdigit(datas->chaine[datas->cursor++]) ||
-	datas->chaine[datas->cursor++] == '-' ||
-	datas->chaine[datas->cursor++] == '.' ||
-	datas->chaine[datas->cursor++] == '*' ||
-	datas->chaine[datas->cursor++] == ' ')
+	while (ft_isdigit(datas->chaine[datas->cursor]) ||
+	datas->chaine[datas->cursor] == '-' ||
+	datas->chaine[datas->cursor] == '.' ||
+	datas->chaine[datas->cursor] == '*' ||
+	datas->chaine[datas->cursor] == ' ')
 	{
-		if (datas->chaine[datas->cursor++] == 0)
+		if (datas->chaine[datas->cursor] == 0)
 			return ;
-		if (datas->chaine[datas->cursor++] == ' ')
+		if (datas->chaine[datas->cursor] == ' ')
 		{
 			write(1, " ", 1);
 			datas->cursor++;
